@@ -6,6 +6,12 @@
     font-family: "Inter", sans-serif;
 }
 
+/*body layout*/
+
+body {
+    background: #FAFAF8;
+}
+
 /*main layout*/
 
 main {
@@ -25,18 +31,43 @@ header {
     gap: .5em;
     box-shadow: 0 2px 0 0 #141413;
     padding-bottom: .5em;
+    background: #FFFF;
 }
 
 .header-icon {
     position: relative;
     top: -4px;
     width: 43px;
-    height: 52px;
 }
 
 .header-title {
     font-size: 2rem;
     font-weight: 310;
 }
+
+/*Form section*/
+
+.ingredients-form {
+    margin-top: 2em;
+    display: flex;
+    gap: 1em;
+}
+
+.ingredients-input {
+    padding: .5em;
+    width: 399px;
+    border-radius: 7px;
+    border: 2px solid #D1D5DB;
+}
+
+.add-ingredient-btn {
+    border-radius: 7px;
+    border: none;
+    background: black;
+    color: #FFFF;
+    padding: .5em 2em;
+    cursor: pointer;
+}
+
 
 
