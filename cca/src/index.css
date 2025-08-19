@@ -69,5 +69,21 @@ header {
     cursor: pointer;
 }
 
+/*Ingredients list*/
+
+.ingredients-unordered-list {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    width: 615px;
+    margin-top: 2em;
+}
+
+.ingredients-unordered-list > li {
+    color: #475467;
+}
+
+
+
 
 
