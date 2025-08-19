@@ -1,0 +1,42 @@
+/*Whole document*/
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+/*main layout*/
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 0;
+}
+
+/*Header*/
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    box-shadow: 0 2px 0 0 #141413;
+    padding-bottom: .5em;
+}
+
+.header-icon {
+    position: relative;
+    top: -4px;
+    width: 43px;
+    height: 52px;
+}
+
+.header-title {
+    font-size: 2rem;
+    font-weight: 310;
+}
+
+
