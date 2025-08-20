@@ -42,10 +42,10 @@ function App() {
 export default App
 
 /*
-Przegląd projektu:
-1. Użytkownik po uruchomieniu aplikacji widzi nagłówek oraz formularz umożliwiający wprowadzanie składników (ZROBIONE)
-2. W momencie wprowadzania kolejnych składników zmienia się layout strony tak aby wyświetlać listę z kolejnymi dodanymi składnikami w formie <ul></ul> (ZROBIONE)
-3. Dla wprowadzonych składników umożliwiam call to action w postaci przycisku generującego przepis
-4. Naciśnięcie przycisku wysyła listę składników do modelu AI, który generuje dla nas przepis
-5. Przepis wyświetlamy pod sekcją z przyciskiem generującym przepis
+  Przegląd projektu:
+  1. Użytkownik po uruchomieniu aplikacji widzi nagłówek oraz formularz umożliwiający wprowadzanie składników (ZROBIONE)
+  2. W momencie wprowadzania kolejnych składników zmienia się layout strony tak aby wyświetlać listę z kolejnymi dodanymi składnikami w formie <ul></ul> (ZROBIONE)
+  3. Dla wprowadzonych składników umożliwiam call to action w postaci przycisku generującego przepis
+  4. Naciśnięcie przycisku wysyła listę składników do modelu AI, który generuje dla nas przepis
+  5. Przepis wyświetlamy pod sekcją z przyciskiem generującym przepis
 */
