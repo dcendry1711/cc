@@ -17,12 +17,9 @@ function App() {
 
   //funkcja obsługująca dodanie nowego składnika z formularza (plus czyszczenie formularza po wprowadzeniu składnika)
 
-  function submitForm(e){
-    e.preventDefault()
-    const formData = new FormData(e.currentTarget)
+  function addIngredient(formData){
     const newIngredient = formData.get("ingredient")
     setIngredientsArr(prevIngredientsArr => [...prevIngredientsArr, newIngredient])
-    e.currentTarget.reset()
   }
 
   return (
@@ -30,7 +27,7 @@ function App() {
 
       <Header />
 
-        <form onSubmit={submitForm} className="ingredients-form">
+        <form action={addIngredient} className="ingredients-form">
           <input className="ingredients-input" type="text" name="ingredient" placeholder="e.g. oregano" aria-label='add ingredient'/>
           <button className="add-ingredient-btn" type="submit">+ Add ingredient</button>
         </form>
