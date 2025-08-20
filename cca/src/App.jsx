@@ -1,8 +1,13 @@
+import { useState } from 'react'
 import Header from './components/Header'
 
 function App() {
 
-  const ingredientsArr = ["Chicken", "Oregano", "Tomatoes"]
+  //deklaracja state z tablicą zawierającą składniki, dodawane w ramach działania aplikacji (na starcie aplikacji brak jakichkolwiek składników w tablicy)
+
+  const [ingredientsArr, setIngredientsArr] = useState([]) 
+
+  //iteracja po elementach ingredientsArr w celu utworzenia elementu JSX w postaci <li></li> z podawanymi składnikami
 
   const ingredietsList = ingredientsArr.map(ingredient => {
     return(
@@ -10,12 +15,14 @@ function App() {
     )
   })
 
+  //funkcja obsługująca dodanie nowego składnika z formularza (plus czyszczenie formularza po wprowadzeniu składnika)
+
   function submitForm(e){
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
     const newIngredient = formData.get("ingredient")
-    ingredientsArr.push(newIngredient)
-    console.log(ingredientsArr)
+    setIngredientsArr(prevIngredientsArr => [...prevIngredientsArr, newIngredient])
+    e.currentTarget.reset()
   }
 
   return (
@@ -27,6 +34,7 @@ function App() {
           <input className="ingredients-input" type="text" name="ingredient" placeholder="e.g. oregano" aria-label='add ingredient'/>
           <button className="add-ingredient-btn" type="submit">+ Add ingredient</button>
         </form>
+
         <ul className="ingredients-unordered-list">
           {ingredietsList}
         </ul>
@@ -39,7 +47,7 @@ export default App
 /*
 Przegląd projektu:
 1. Użytkownik po uruchomieniu aplikacji widzi nagłówek oraz formularz umożliwiający wprowadzanie składników (ZROBIONE)
-2. W momencie wprowadzania kolejnych składników zmienia się layout strony tak aby wyświetlać listę z kolejnymi dodanymi składnikami w formie <ul></ul> (CZĘŚCIOWO)
+2. W momencie wprowadzania kolejnych składników zmienia się layout strony tak aby wyświetlać listę z kolejnymi dodanymi składnikami w formie <ul></ul> (ZROBIONE)
 3. Dla wprowadzonych składników umożliwiam call to action w postaci przycisku generującego przepis
 4. Naciśnięcie przycisku wysyła listę składników do modelu AI, który generuje dla nas przepis
 5. Przepis wyświetlamy pod sekcją z przyciskiem generującym przepis
