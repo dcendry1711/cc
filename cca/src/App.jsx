@@ -23,7 +23,11 @@ function App() {
     setIngredientsArr(prevIngredientsArr => [...prevIngredientsArr, newIngredient])
   }
 
+  //deklaracja state monitorującego czy wyświetlono przepis
+
   const [isRecipeShown, setIsRecipeShown] = useState(false)
+
+  //funckja obsługująca status zmiennej isRecipeShown
 
   function generateRecipe(){
     setIsRecipeShown( prevRecipeShown => !prevRecipeShown)
