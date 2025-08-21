@@ -38,8 +38,18 @@ function App() {
             <ul className="ingredients-unordered-list">
               {ingredietsList}
             </ul>
-          </section>
-        }
+            {ingredientsArr.length < 3 ? <p className="ingredientsList-tip">*Type {3 - ingredientsArr.length} more ingredients to generate recipe from my app!</p> : null}
+          </section>}
+        
+
+        {ingredientsArr.length > 2 &&
+        <section className="cta-section">
+          <div className="cta-text">
+            <h3>Ready for a recipe?</h3>
+            <p>Generate a recipe from your list of ingredients.</p>
+          </div>
+          <button className="cta-btn">Get a recipe</button>
+        </section>}
 
     </main>
   )
@@ -51,8 +61,10 @@ export default App
   Przegląd projektu:
   1. Użytkownik po uruchomieniu aplikacji widzi nagłówek oraz formularz umożliwiający wprowadzanie składników (ZROBIONE)
   2. W momencie wprowadzania kolejnych składników zmienia się layout strony tak aby wyświetlać listę z kolejnymi dodanymi składnikami w formie <ul></ul> (ZROBIONE)
-  3. lista składników jest wyświetlana dynamicznie. Póki nie ma składników w tablicy, nie wyświetla się sekcja z listą składników.
-  4. Dla wprowadzonych składników (przynajmniej 3) umożliwiam call to action w postaci przycisku generującego przepis
-  5. Naciśnięcie przycisku wysyła listę składników do modelu AI, który generuje dla nas przepis
-  6. Przepis wyświetlamy pod sekcją z przyciskiem generującym przepis
+  3. Lista składników jest wyświetlana dynamicznie. Póki nie ma składników w tablicy, nie wyświetla się sekcja z listą składników. (ZROBIONE)
+  4. Stworzenie sekcji call to action z przyciskiem umożliwiającym generowanie przepisu (ZROBIONE)
+  5. Dynamiczne wyświetlanie informacji o wymaganej ilości składników w celu wyświetlenia sekcji cta (ZROBIONE)
+  5. Dla wprowadzonych składników (przynajmniej 3) umożliwiam call to action w postaci przycisku generującego przepis (ZROBIONE)
+  6. Naciśnięcie przycisku wysyła listę składników do modelu AI, który generuje dla nas przepis
+  7. Przepis wyświetlamy pod sekcją z przyciskiem generującym przepis
 */
