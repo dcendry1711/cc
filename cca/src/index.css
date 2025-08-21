@@ -71,12 +71,20 @@ header {
 
 /*Ingredients list*/
 
+.ingredientsList-section {
+    width: 41%;
+}
+
+.ingredients-header {
+    margin-top: 1em;
+}
+
 .ingredients-unordered-list {
     display: flex;
     flex-direction: column;
     gap: .5em;
     width: 615px;
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
 .ingredients-unordered-list > li {

@@ -32,9 +32,15 @@ function App() {
           <button className="add-ingredient-btn" type="submit">+ Add ingredient</button>
         </form>
 
-        <ul className="ingredients-unordered-list">
-          {ingredietsList}
-        </ul>
+        {ingredientsArr.length > 0 &&
+          <section className='ingredientsList-section'>
+            <h2 className="ingredients-header">Ingredients list:</h2>
+            <ul className="ingredients-unordered-list">
+              {ingredietsList}
+            </ul>
+          </section>
+        }
+        
     </main>
   )
 }
