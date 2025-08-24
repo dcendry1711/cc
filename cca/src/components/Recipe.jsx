@@ -1,4 +1,4 @@
-export default function Recipe(){
+export default function Recipe(props){
     return(
         <section className="recipe-section">
             <h2>Chef Claude Recommends:</h2>
@@ -31,6 +31,9 @@ export default function Recipe(){
                     <li>Serve hot, garnished with additional fresh basil or grated Parmesan cheese if desired.</li>
                 </ol>
             </article>
+
+            <button onClick={() => props.clearRecipe()} className="clear-recipe-btn">Clear recipe</button>
+
         </section>
     )
 }

@@ -1,20 +1,15 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import Recipe from './components/Recipe'
+import IngredientsList from './components/IngredientsList' 
+import Cta from './components/Cta'
+import Form from './components/Form'
 
 function App() {
 
   //deklaracja state z tablicą zawierającą składniki, dodawane w ramach działania aplikacji (na starcie aplikacji brak jakichkolwiek składników w tablicy)
 
   const [ingredientsArr, setIngredientsArr] = useState([]) 
-
-  //iteracja po elementach ingredientsArr w celu utworzenia elementu JSX w postaci <li></li> z podawanymi składnikami
-
-  const ingredietsList = ingredientsArr.map(ingredient => {
-    return(
-      <li key={ingredient}>{ingredient}</li>
-    )
-  })
 
   //funkcja obsługująca dodanie nowego składnika z formularza (plus czyszczenie formularza po wprowadzeniu składnika)
 
@@ -33,36 +28,24 @@ function App() {
     setIsRecipeShown( prevRecipeShown => !prevRecipeShown)
   }
 
+  function clearRecipe(){
+    setIngredientsArr( prevIngredientsArr => [])
+    setIsRecipeShown( prevIsRecipeShown => false)
+  }
+
   return (
     <main>
 
       <Header />
 
-        <form action={addIngredient} className="ingredients-form">
-          <input className="ingredients-input" type="text" name="ingredient" placeholder="e.g. oregano" aria-label='add ingredient'/>
-          <button className="add-ingredient-btn" type="submit">+ Add ingredient</button>
-        </form>
+        <Form addIngredient={addIngredient}/>
 
-        {ingredientsArr.length > 0 &&
-          <section className='ingredientsList-section'>
-            <h2 className="ingredients-header">Ingredients list:</h2>
-            <ul className="ingredients-unordered-list">
-              {ingredietsList}
-            </ul>
-            {ingredientsArr.length < 3 ? <p className="ingredientsList-tip">*Type {3 - ingredientsArr.length} more ingredients to generate recipe from my app!</p> : null}
-          </section>}
+        {ingredientsArr.length > 0 && <IngredientsList  ingredientsArr={ingredientsArr}/>}
         
 
-        {ingredientsArr.length > 2 &&
-        <section className="cta-section">
-          <div className="cta-text">
-            <h3>Ready for a recipe?</h3>
-            <p>Generate a recipe from your list of ingredients.</p>
-          </div>
-          <button onClick={generateRecipe} className="cta-btn" disabled={isRecipeShown}>Get a recipe</button>
-        </section>}
+        {ingredientsArr.length > 2 && <Cta generateRecipe={generateRecipe} isRecipeShown={isRecipeShown}/>}
 
-        {isRecipeShown && <Recipe />}
+        {isRecipeShown && <Recipe clearRecipe={clearRecipe} />}
 
     </main>
   )
