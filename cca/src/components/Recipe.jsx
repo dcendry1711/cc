@@ -1,13 +1,14 @@
+import ReactMarkdown from 'react-markdown'
+
 export default function Recipe(props){
 
     return(
         <section className="recipe-section">
-            <h2>Chef Claude Recommends:</h2>
             <article className="suggested-recipe-container" aria-live="polite">
-               {props.generatedRecipe}
+               <ReactMarkdown>{props.generatedRecipe}</ReactMarkdown>
             </article>
 
-            <button onClick={() => props.clearRecipe()} className="clear-recipe-btn">Clear recipe</button>
+            <button onClick={() => props.clearRecipe()} className="clear-recipe-btn">Usuń przepis</button>
 
         </section>
     )

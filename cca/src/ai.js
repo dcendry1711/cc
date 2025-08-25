@@ -21,7 +21,7 @@ w Markdownie, aby łatwiej było ją wyświetlić na stronie internetowej.
 const anthropic = new Anthropic({
     // Make sure you set an environment variable in Scrimba 
     // for ANTHROPIC_API_KEY
-    apiKey: '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',
+    apiKey: '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',
 
     dangerouslyAllowBrowser: true,
 })

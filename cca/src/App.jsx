@@ -54,7 +54,7 @@ function App() {
         
       {ingredientsArr.length > 2 && <Cta generateRecipe={generateRecipe} isRecipeShown={isRecipeShown}/>}
 
-      {isRecipeShown && <Recipe generatedRecipe={generatedRecipe}  clearRecipe={clearRecipe} />}
+      {generatedRecipe && <Recipe generatedRecipe={generatedRecipe}  clearRecipe={clearRecipe} />}
 
     </main>
   )

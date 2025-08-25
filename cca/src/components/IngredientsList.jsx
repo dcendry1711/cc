@@ -10,11 +10,11 @@ export default function IngredientsList(props){
 
     return(
         <section className='ingredientsList-section'>
-            <h2 className="ingredients-header">Ingredients list:</h2>
+            <h2 className="ingredients-header">Lista składników:</h2>
             <ul className="ingredients-unordered-list">
               {ingredietsList}
             </ul>
-            {props.ingredientsArr.length < 3 ? <p className="ingredientsList-tip">*Type {3 - props.ingredientsArr.length} more ingredients to generate recipe from my app!</p> : null}
+            {props.ingredientsArr.length < 3 ? <p className="ingredientsList-tip">*Dodaj do listy jeszcze {3 - props.ingredientsArr.length} składnik/ki aby wygenerować przepis!</p> : null}
         </section>
     )
 }

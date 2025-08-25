@@ -151,6 +151,21 @@ header {
     cursor: pointer;
 }
 
+.suggested-recipe-container {
+    margin: 0 1em;
+}
+
+.suggested-recipe-container > h2 {
+    margin: 1em 0;
+}
+
+.suggested-recipe-container > ul {
+    margin: 1em 0;
+}
+
+.suggested-recipe-container > ol {
+    margin: 1em 0;
+}
 
 
 
